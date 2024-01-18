@@ -1,0 +1,126 @@
+body {
+  background-color: rgba(106, 165, 162, 0.603);
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* background-color: rgba(134, 100, 56, 0.596); */
+}
+.container {
+  flex: 1;
+}
+
+/* New Page  */
+.add-btn {
+  background-color: green !important;
+  color: white !important;
+}
+.navbar {
+  height: 5rem;
+  background-color: whitesmoke;
+}
+
+.fa-compass-drafting {
+  color: #fe424d;
+  font-size: 2rem;
+}
+
+.row {
+  margin-bottom: 1rem;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-right: calc(var(--bs-gutter-x) * 0.5);
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
+  margin-top: var(--bs-gutter-y);
+}
+.nav-link {
+  color: #222222 !important;
+}
+
+/* footer  */
+.f-info-links a {
+  text-decoration: none;
+  color: #222222;
+}
+.f-info-links a:hover {
+  text-decoration: underline;
+}
+
+.f-info-links,
+.f-info-socials,
+.f-info-brand {
+  width: 100%;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.f-info-socials i {
+  font-size: 1.6rem;
+  margin-right: 1rem;
+}
+.f-info {
+  text-align: center;
+  height: 6rem;
+  display: flex;
+  background-color: #ebebeb;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: space-evenly;
+}
+
+.card {
+  border: none !important;
+  margin-bottom: 2rem;
+}
+.card-img-top {
+  border-radius: 1rem !important;
+  width: 100% !important;
+  object-fit: cover !important;
+}
+
+.card-body {
+  padding: 0 !important;
+}
+.card-text p {
+  font-weight: 400;
+}
+
+.listing-links {
+  text-decoration: none;
+}
+
+.card-img-overlay {
+  opacity: 0;
+}
+.card-img-overlay:hover {
+  opacity: 0.3;
+  background-color: whitesmoke;
+}
+
+/* Edit Page  */
+/* .edit-btn {
+  background-color: rgba(211, 149, 149, 0.445) !important;
+  color: rgb(0, 0, 0) !important;
+  border: none;
+  opacity: 0.8;
+} */
+
+/* Show Page  */
+.btns {
+  display: flex;
+}
+
+img,
+svg {
+  vertical-align: middle;
+  width: 400px;
+  border-radius: 20px;
+}
+
+/* Map  */
+#map {
+  height: 400px;
+  width: 70vh;
+}

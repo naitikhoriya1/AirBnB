@@ -1,0 +1,155 @@
+<% layout("/layouts/boilerplate") %>
+<!-- <%= success %> -->
+<!-- <h2>All listings</h2> -->
+<!-- 
+  <form action="/listings/new" method="GET">
+    <button>Create New Listing</button>
+  </form>
+  -->
+<style>
+  #filters {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .filters {
+    text-align: center;
+    margin-top: 1rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      sans-serif;
+    opacity: 0.7;
+    margin-top: 2rem;
+    margin-right: 2rem;
+  }
+  .filters:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+  .filters p{
+    font-size: 0.8rem;
+  }
+  .tax-info{
+    display: none;
+  }
+  .tax-toggle{
+    background-color: rgba(158, 189, 224, 0.28);
+    color: rgb(0, 0, 0);
+    border: 1px solid gainsboro;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 4px;
+  }
+</style>
+<div id="filters">
+  <div class="filters">
+    <div><i class="fa-solid fa-fire"></i></div>
+    <p>Tranding</p>
+  </div>
+  <div class="filters">
+    <div><i class="fa-solid fa-house-chimney"></i></div>
+    <p>Rooms</p>
+  </div>
+  <div class="filters">
+    <div><i class="fa-solid fa-mountain-sun"></i></div>
+    <p>Mountains</p>
+  </div>
+  <div class="filters">
+    <div><i class="fa-solid fa-city"></i></div>
+    <p>Cities</p>
+  </div>
+  <div class="filters">
+    <div><i class="fa-solid fa-landmark-dome"></i></div>
+    <p>Historical</p>
+  </div>
+  <div class="filters">
+    <div><i class="fa-solid fa-champagne-glasses"></i></div>
+    <p>Party</p>
+  </div>
+  <div class="filters">
+    <div><i class="fa-solid fa-gamepad"></i></div>
+    <p>Gmaes</p>
+  </div>
+  <div class="filters">
+    <div><i class="fa-regular fa-snowflake"></i></div>
+    <p>Snowfalls</p>
+    </div>
+    <div class="filters">
+      <div><i class="fa-solid fa-campground"></i></div>
+      <p>Camping</p>
+    </div>
+    <div class="filters">
+      <div><i class="fa-solid fa-heart"></i></div>
+      <p>Loved</p>
+    </div>
+    <div class="filters">
+      <div><i class="fa-solid fa-tractor"></i></div>
+      <p>Farm Houses</p>
+      </div>
+    <div class="filters">
+      <div><i class="fa-solid fa-crown"></i></div>
+      <p>Top cities</p>
+    </div>
+    <div class="filters">
+      <div><i class="fa-solid fa-wifi"></i></div>
+      <p>Developed</p>
+    </div>
+    <div class="tax-toggle">
+      <div class="form-check-reverse form-switch">
+        <label class="form-check-label" for="flexSwitchCheckDefault"><b>Display total before taxes </b> </label>
+        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+      </div>
+    </div>
+    </div>
+    <div class="row mt-3">
+      <% for(let listings of allListings) { %>
+      <div class="col-lg-4">
+        <a href="/listings/<%= listings._id %>" class="listing-links">
+          <div class="card col" style="width: 20rem">
+            <img
+              src="<%= listings.image.url %>"
+              class="card-img-top"
+              alt="listing_image"
+              style="height: 18rem"
+            />
+            <div class="card-img-overlay">AirBnB</div>
+            <div class="card-body">
+              <h5 class="card-title"></h5>
+              <p class="card-text">
+                <b><%= listings.title %> </b><br />
+                <span>&#8377;</span><%= listings.price %> /Day 
+                <i class="tax-info"> &nbsp; &nbsp; +18% GST</i>
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <% } %>
+    </div>
+
+    <!-- 
+<ul>
+  <% for(let listings of allListings) { %>
+    <li><a href="/listings/<%= listings._id %>"><%= listings.title %></a></li>
+    <br />
+  <% } %>
+</ul>
+-->
+  </div>
+</div>
+
+
+<script>
+  let texSwitch = document.getElementById("flexSwitchCheckDefault");
+  texSwitch.addEventListener("click" , () =>{
+    let texInfo = document.getElementsByClassName("tax-info");
+    for(info of texInfo){
+      if(info.style.display != "inline"){
+        info.style.display= "inline";
+      }else{
+        info.style.display= "none";
+      }
+    }
+    // console.log(texInfo);
+    // console.log("Clicked");
+  })
+</script>
